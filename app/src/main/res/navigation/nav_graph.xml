@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    android:label="Each Plate"
+    app:startDestination="@id/itemFragment">
+
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="com.example.chowmein_order.ItemFragment"
+        android:label="Chowmein Order"
+        tools:layout="@layout/fragment_item" >
+        <action
+            android:id="@+id/action_itemFragment_to_platesFragment"
+            app:destination="@id/platesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/platesFragment"
+        android:name="com.example.chowmein_order.PlatesFragment"
+        android:label="Number Of Plates"
+        tools:layout="@layout/fragment_plates" >
+        <action
+            android:id="@+id/action_platesFragment_to_platesQuantityFragment"
+            app:destination="@id/platesQuantityFragment" />
+        <action
+            android:id="@+id/action_platesFragment_to_itemFragment"
+            app:destination="@id/itemFragment"
+            app:popUpTo="@id/itemFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/platesQuantityFragment"
+        android:name="com.example.chowmein_order.PlatesQuantityFragment"
+        android:label="fragment_plates_quantity"
+        tools:layout="@layout/fragment_plates_quantity" >
+        <action
+            android:id="@+id/action_platesQuantityFragment_to_pickUpDateFragment"
+            app:destination="@id/pickUpDateFragment" />
+        <action
+            android:id="@+id/action_platesQuantityFragment_to_itemFragment"
+            app:destination="@id/itemFragment"
+            app:popUpTo="@id/itemFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickUpDateFragment"
+        android:name="com.example.chowmein_order.PickUpDateFragment"
+        android:label="Choose Date"
+        tools:layout="@layout/fragment_pick_up_date" >
+        <action
+            android:id="@+id/action_pickUpDateFragment_to_orderSummaryFragment"
+            app:destination="@id/orderSummaryFragment" />
+        <action
+            android:id="@+id/action_pickUpDateFragment_to_itemFragment"
+            app:destination="@id/itemFragment"
+            app:popUpTo="@id/itemFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderSummaryFragment"
+        android:name="com.example.chowmein_order.OrderSummaryFragment"
+        android:label="Order Summary"
+        tools:layout="@layout/fragment_order_summary" >
+        <action
+            android:id="@+id/action_orderSummaryFragment_to_itemFragment"
+            app:destination="@id/itemFragment"
+            app:popUpTo="@id/itemFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="itemFragment"
+            type="com.example.chowmein_order.ItemFragment" />
+    </data>
+
+    <ScrollView
+        tools:context=".ItemFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/image_size"
+                android:layout_height="@dimen/image_size"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:importantForAccessibility="no"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/chowmein"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/choose_topping"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_marginBottom="18dp"
+                android:textColor="@color/material_on_background_emphasis_medium" />
+
+            <Button
+                android:id="@+id/eggChowmein"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:text="@string/egg_chowmein"
+                android:layout_marginBottom="@dimen/margin_between_elements"
+                android:onClick="@{() -> itemFragment.setItemItemPrice(@string/egg, 110)}"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/chickenChowmein"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:text="@string/chicken_chowmein"
+                android:onClick="@{() -> itemFragment.setItemItemPrice(@string/chicken, 150)}"
+                android:layout_marginBottom="@dimen/margin_between_elements"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/vegChowmein"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:text="@string/veg_chowmein"
+                android:onClick="@{() -> itemFragment.setItemItemPrice(@string/veg, 90)}"
+                android:layout_marginBottom="@dimen/margin_between_elements"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/buffChowmein"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:text="@string/buff_chowmein"
+                android:onClick="@{() -> itemFragment.setItemItemPrice(@string/buff, 130)}"
+                android:layout_marginBottom="@dimen/margin_between_elements"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
+
+
